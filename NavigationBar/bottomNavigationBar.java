@@ -25,7 +25,16 @@ public class MainActivity extends AppCompatActivity { // 이 액티비티는 그
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             FragmentTransaction transaction = fragmentManager.beginTransaction();
-
+            int itemId = menuItem.getItemId();
+            
+            if (itemId == R.id.menu1_id) { // 첫번째 menu id
+                transaction.replace(R.id.frame_layout, fragment_name1).commit();
+            } else if (itemId == R.id.menu2_id) { // 두번째 menu id
+                transaction.replace(R.id.frame_layout, fragment_name2).commit();
+            } else if (itemId == R.id.menu3_id) { // 세번째 menu id
+                transaction.replace(R.id.frame_layout, fragment_name3).commit();
+            }
+            /* 이전에는 switch-case문 사용이 가능했지만, R의 정의가 바뀌면서 if-else문을 사용
             switch (menuItem.getItemId()) {
                 case R.id.menu1_id: // 첫번째 menu id
                     transaction.replace(R.id.frame_layout, fragment_name1).commit();
@@ -36,9 +45,8 @@ public class MainActivity extends AppCompatActivity { // 이 액티비티는 그
                 case R.id.menu3_id: // 세번째 menu id
                     transaction.replace(R.id.frame_layout, fragment_name3).commit();
                     break;
-
             }
-
+            */
             return true;
         }
     }

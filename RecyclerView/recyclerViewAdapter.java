@@ -5,7 +5,7 @@ public class Adapter_class extends RecyclerView.Adapter<Adapter_class.ViewHolder
     @NonNull
     @Override
     public Adapter_class.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_id, parent, false); // recyclerview의 id
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, parent, false); // item_view xml
         return new ViewHolder(view);
     }
 
